@@ -1,3 +1,5 @@
+const { off } = require("process");
+
 module.exports = {
 	env: {
 		es2021: true,
@@ -26,5 +28,6 @@ module.exports = {
 		"no-empty-function": ["error", { allow: ["constructors"] }],
 		"no-unused-vars": "off",
 		"no-plusplus": [2, { allowForLoopAfterthoughts: true }],
+		"@typescript-eslint/strict-boolean-expressions": off,
 	},
 };
