@@ -4,9 +4,12 @@
 	"description": "API orientada a testes usando node",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --passWithNoTests",
-		"test:unit": "jest --passWithNoTests --watch",
-		"test:staged": "jest --passWithNoTests"
+		"test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+		"test:verbose": "jest --passWithNoTests --runInBand",
+		"test:unit": "jest -- --passWithNoTests --watch -c jest-unit-config.js",
+		"test:integration": "npm jest -- --watch - c jest-integration-config.js",
+		"test:staged": "npm test -- --findRelatedTests",
+		"test:ci": "npm test -- --coverage"
 	},
 	"repository": {
 		"type": "git",
@@ -22,12 +25,15 @@
 	"devDependencies": {
 		"@types/jest": "^28.1.4",
 		"@types/node": "^18.0.0",
+		"@types/validator": "^13.7.5",
 		"@typescript-eslint/eslint-plugin": "^4.33.0",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard-with-typescript": "^21.0.1",
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-promise": "^5.2.0",
 		"git-commit-msg-linter": "^4.1.3",
 		"husk": "^0.5.3",
@@ -36,11 +42,11 @@
 		"prettier": "2.7.1",
 		"ts-jest": "^28.0.5",
 		"ts-node": "^10.8.2",
-		"typescript": "^4.7.4",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-prettier": "^4.2.1"
+		"typescript": "^4.7.4"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"validator": "^13.7.0"
+	},
 	"jest": {
 		"moduleFileExtensions": [
 			"js",
