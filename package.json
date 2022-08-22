@@ -4,7 +4,8 @@
 	"description": "API orientada a testes usando node",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --passWithNoTests --watch",
+		"test": "jest --passWithNoTests",
+		"test:unit": "jest --passWithNoTests --watch",
 		"test:staged": "jest --passWithNoTests"
 	},
 	"repository": {
