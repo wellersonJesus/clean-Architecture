@@ -1,6 +1,7 @@
-import { AccountModel, AddAccount, AddAccountModel, EmailValidator } from "../controllers/signup-protocols";
+import { AddAccount, AddAccountModel } from "../controllers/signup-protocols";
 import { InvalidParamError, MissingParamError, ServerError } from "../errors";
 import { SignUpController } from "./signup";
+import { AccountModel, EmailValidator } from "./signup-protocols";
 
 const makeEmailValidator = (): EmailValidator => {
 	class EmailValidatorStub implements EmailValidator {
@@ -72,7 +73,6 @@ describe("SignUp Controller", () => {
 		expect(httpResponse.body).toEqual(new MissingParamError("email"));
 	});
 
-	export * from "../../../domain/usecases/add-account";
 	test("Should return 400 if no password is provided", async () => {
 		const { sut } = makeSut();
 		const httpRequest = {
