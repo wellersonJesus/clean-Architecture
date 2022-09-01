@@ -1,6 +1,7 @@
-import { InvalidParamError, MissingParamError } from "../errors";
-import { badRequest, ok, serverError } from "../helpers/http-helper";
-import { AddAccount, Controller, EmailValidator, HttpRequest, HttpResponse } from "./signup-protocols";
+import { AddAccount } from "../domain/usecases/add-account";
+import { InvalidParamError, MissingParamError } from "../presentation/errors";
+import { badRequest, ok, serverError } from "../presentation/helpers/http-helper";
+import { Controller, EmailValidator, HttpRequest, HttpResponse } from "./signup-protocols";
 
 export class SignUpController implements Controller {
 	private readonly emailValidator: EmailValidator;
@@ -34,6 +35,7 @@ export class SignUpController implements Controller {
 			});
 			return ok(account);
 		} catch (error) {
+			console.error(error);
 			return serverError();
 		}
 	}

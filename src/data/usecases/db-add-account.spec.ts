@@ -1,6 +1,7 @@
-import { AddAccountModel } from "../../../presentation/controllers/signup-protocols";
+import { AddAccountModel } from "../../domain/usecases/add-account";
+import { AccountModel } from "../../signup/signup-protocols";
 import { DbAddAccount } from "./db-add-account";
-import { AccountModel, AddAccountRepository, Encrypter } from "./db-add-account-protocols";
+import { AddAccountRepository, Encrypter } from "./db-add-account-protocols";
 
 const makeEncrypter = (): Encrypter => {
 	class EncrypterStub implements Encrypter {
