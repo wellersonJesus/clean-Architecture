@@ -11,7 +11,7 @@
 		"test:staged": "npm test -- --findRelatedTests",
 		"test:ci": "npm test -- --coverage"
 	},
-	"author": "Rodrigo Manguinho",
+	"author": "Wellerson Jesus",
 	"license": "ISC",
 	"devDependencies": {
 		"@shelf/jest-mongodb": "^1.1.3",
