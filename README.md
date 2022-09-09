@@ -13,6 +13,9 @@ $ npm i @types/express -D
 
 #sucraseCopiladorJavaScripParaTypeScript
 $ npm i sucrase -D
+
+#monitoraArquisvos
+$ npm i fast-glob
 ```
 
 # Run API
